@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Contact from '../../models/Contact'
 
 type ContactsState = {
-  itens: Contact[]
+  items: Contact[]
 }
 
 const initialState: ContactsState = {
-  itens: [
+  items: [
     {
       id: 1,
       name: 'Sam',
@@ -33,21 +33,21 @@ const contactsSlice = createSlice({
   initialState,
   reducers: {
     remove: (state, action: PayloadAction<number>) => {
-      state.itens = [
-        ...state.itens.filter((contact) => contact.id !== action.payload)
+      state.items = [
+        ...state.items.filter((contact) => contact.id !== action.payload)
       ]
     },
     edit: (state, action: PayloadAction<Contact>) => {
-      const contactIndex = state.itens.findIndex(
+      const contactIndex = state.items.findIndex(
         (c) => c.id === action.payload.id
       )
 
       if (contactIndex >= 0) {
-        state.itens[contactIndex] = action.payload
+        state.items[contactIndex] = action.payload
       }
     },
     register: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
-      const contactExists = state.itens.find(
+      const contactExists = state.items.find(
         (contact) =>
           contact.name.toLowerCase() === action.payload.name.toLowerCase()
       )
@@ -55,13 +55,13 @@ const contactsSlice = createSlice({
       if (contactExists) {
         alert('Contact already exists!')
       } else {
-        const lastContact = state.itens[state.itens.length - 1]
+        const lastContact = state.items[state.items.length - 1]
 
         const newContact = {
           ...action.payload,
           id: lastContact ? lastContact.id + 1 : 1
         }
-        state.itens.push(newContact)
+        state.items.push(newContact)
       }
     }
   }

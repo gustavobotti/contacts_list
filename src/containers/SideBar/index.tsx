@@ -8,10 +8,10 @@ import * as S from './styles'
 import { Button, Field } from '../../styles'
 
 type Props = {
-  showFilters: boolean
+  showSearch: boolean
 }
 
-const SideBar = ({ showFilters }: Props) => {
+const SideBar = ({ showSearch }: Props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { term } = useSelector((state: RootReducer) => state.filter)
@@ -19,7 +19,7 @@ const SideBar = ({ showFilters }: Props) => {
   return (
     <S.Aside>
       <div>
-        {showFilters ? (
+        {showSearch ? (
           <>
             <Field
               type="text"

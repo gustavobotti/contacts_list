@@ -1,20 +1,18 @@
 import { useSelector } from 'react-redux'
 
 import Contact from '../../components/Contact'
-import { MainContainer, Title } from '../../styles'
+import { MainContainer, Name } from '../../styles'
 
 import { RootReducer } from '../../store'
 
 const ContactsList = () => {
   const { items } = useSelector((state: RootReducer) => state.contacts)
-  const { term } = useSelector(
-    (state: RootReducer) => state.filter
-  )
+  const { term } = useSelector((state: RootReducer) => state.filter)
 
   const filterContacts = () => {
     let filteredContacts = items
     if (term !== undefined) {
-        filteredContacts = filteredContacts.filter(
+      filteredContacts = filteredContacts.filter(
         (item) => item.name.toLowerCase().search(term.toLowerCase()) >= 0
       )
 
@@ -26,10 +24,11 @@ const ContactsList = () => {
 
   const showFilterResult = (quantity: number) => {
     let message = ''
-    const complement =
-      term !== undefined && term.length > 0 ? `and "${term}"` : ''
 
-      message = `${quantity} contact(s) found as: "${`${term}`}" ${complement}`
+    message =
+      term !== undefined && term.length > 0
+        ? `${quantity} contact(s) found: "${`${term}`}"`
+        : ''
 
     return message
   }
@@ -39,16 +38,11 @@ const ContactsList = () => {
 
   return (
     <MainContainer>
-      <Title as="p">{message}</Title>
+      <Name as="p">{message}</Name>
       <ul>
         {contacts.map((c) => (
           <li key={c.name}>
-            <Contact
-              id={c.id}
-              name={c.name}
-              phone={c.phone}
-              email={c.email}
-            />
+            <Contact id={c.id} name={c.name} phone={c.phone} email={c.email} />
           </li>
         ))}
       </ul>

@@ -4,7 +4,7 @@ import ContactsList from '../../containers/ContactsList'
 
 const Home = () => (
   <>
-    <SideBar showFilters />
+    <SideBar showSearch />
     <ContactsList />
     <ButtonAdd />
   </>

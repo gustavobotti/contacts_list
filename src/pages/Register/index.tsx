@@ -3,7 +3,7 @@ import Form from '../../containers/Form'
 
 const Register = () => (
   <>
-    <SideBar showFilters={false} />
+    <SideBar showSearch={false} />
     <Form />
   </>
 )

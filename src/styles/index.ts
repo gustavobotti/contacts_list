@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+  background-color: ${variables.graphite};
 `
 
 export const MainContainer = styled.main`
@@ -24,10 +25,10 @@ export const MainContainer = styled.main`
 
 export const Name = styled.h2`
   display: block;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 6px 0 40px 6px;
   font-size: 18px;
   font-weight: bold;
+  color: ${variables.white};
 `
 
 export const Field = styled.input`
@@ -38,6 +39,7 @@ export const Field = styled.input`
   color: #666666;
   border-color: #666666;
   width: 100%;
+  margin-bottom: 8px;
 `
 
 export const Button = styled.button`

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import variables from '../../styles/variables'
 
-export const Form = styled.form`
+export const Formulary = styled.form`
   max-width: 547px;
   width: 100%;
   font-weight: bold;
@@ -10,5 +11,21 @@ export const Form = styled.form`
   textarea {
     resize: none;
     margin: 16px 0;
+  }
+`
+export const Card = styled.div`
+  max-width: 600px;
+  width: 100%;
+  background-color: ${variables.dark};
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  margin-top: 40px;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
   }
 `
