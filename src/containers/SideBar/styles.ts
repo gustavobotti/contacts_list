@@ -5,5 +5,5 @@ export const Aside = styled.aside`
   padding: 16px;
   background-color: ${variables.dark};
   height: 100vh;
-  width: 20%;
+  width: 20vh;
 `
