@@ -14,7 +14,7 @@ const textareaStyles = `
 `
 export const Card = styled.div`
   background-color: ${variables.dark};
-  box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.25);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.33);
   padding: 16px;
   margin-bottom: 32px;
   border-radius: 16px;
