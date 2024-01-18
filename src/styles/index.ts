@@ -15,12 +15,32 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
   background-color: ${variables.graphite};
+
+  @media (max-width: 600px) {
+    grid-template-columns: 150px auto;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 120px auto;
+  }
+
+  @media (max-width: 333px) {
+    grid-template-columns: 100px auto;
+  }
 `
 
 export const MainContainer = styled.main`
   padding: 0 40px;
   height: 100vh;
   overflow-y: scroll;
+
+  @media (max-width: 600px) {
+    padding-right: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0;
+  }
 `
 
 export const Name = styled.h2`

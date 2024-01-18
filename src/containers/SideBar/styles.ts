@@ -5,5 +5,8 @@ export const Aside = styled.aside`
   padding: 16px;
   background-color: ${variables.dark};
   height: 100vh;
-  width: 20vh;
+
+  @media (max-width: 600px) {
+    width: 27vw;
+  }
 `

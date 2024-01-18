@@ -16,4 +16,16 @@ export const Circle = styled(Link)`
   align-items: center;
   font-size: 40px;
   text-decoration: none;
+
+  @media (max-width: 400px) {
+    left: 6vw;
+  }
+
+  @media (max-width: 350px) {
+    left: 5vw;
+  }
+
+  @media (max-width: 300px) {
+    left: 3vw;
+  }
 `
